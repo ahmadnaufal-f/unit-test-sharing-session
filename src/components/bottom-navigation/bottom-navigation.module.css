@@ -1,0 +1,34 @@
+.navigationWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.linkContainer:hover {
+    background-color: var(--gray-800);
+}
+
+.linkNext {
+    align-items: flex-end;
+}
+
+.linkNav {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color-2);
+}
+
+.linkText {
+    font-size: 1.2rem;
+    color: var(--text-color-1);
+}
