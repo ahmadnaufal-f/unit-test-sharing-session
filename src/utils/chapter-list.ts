@@ -148,7 +148,7 @@ export const getChapter = (chapter: number = 0, subChapter: number | null): Chap
     if (chapter < 0 || chapter >= chapterList.length) {
         return null
     }
-    if (!subChapter || chapterList[chapter].subchapters.length === 0) {
+    if (subChapter === undefined || subChapter === null || chapterList[chapter].subchapters.length === 0) {
         return {
             title: chapterList[chapter].title,
             link: chapterList[chapter].link,
