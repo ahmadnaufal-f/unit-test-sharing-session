@@ -1,0 +1,16 @@
+.header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.toggleButtons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}

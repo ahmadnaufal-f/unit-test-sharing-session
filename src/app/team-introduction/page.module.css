@@ -1,0 +1,44 @@
+.section {
+    height: 100%;
+    width: 100%;
+    padding-block: 2rem;
+}
+
+.memberCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.memberCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--primary-2);
+    color: var(--text-color-1);
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
+.profilePictureContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 240px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.profilePicture {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+}

@@ -15,7 +15,7 @@
 }
 
 .linkContainer:hover {
-    background-color: var(--gray-800);
+    background-color: var(--bg-color-2);
 }
 
 .linkNext {

@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import styles from './bottom-navigation.module.css'
 import { getChapterIndex, getNextChapter, getPreviousChapter } from '@/utils/chapter-list'
+import { usePathname } from 'next/navigation'
 
 function NavigationLink({ nav, text, href }: { href: string; text: string; nav: string }) {
     return (
@@ -11,7 +14,8 @@ function NavigationLink({ nav, text, href }: { href: string; text: string; nav: 
     )
 }
 
-export default function BottomNavigation({ currentLink }: { currentLink: string }) {
+export default function BottomNavigation() {
+    const currentLink = usePathname()
     const indexes = getChapterIndex(currentLink)
     let prevChapter, nextChapter
     if (indexes.chapter === null) {

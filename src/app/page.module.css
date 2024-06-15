@@ -1,23 +1,26 @@
-.main {
-    display: flex;
-    min-height: 100vh;
-}
-
-.slide {
-    position: relative;
+.homeContainer {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem;
-    width: 1000px;
-    height: 100vh;
-    margin-inline: auto;
 }
 
 .title,
 .description {
     text-align: center;
+}
+
+.title {
+    color: var(--text-color-1);
+    font-weight: 700;
+    margin-block-end: 0.5rem;
+}
+
+.description {
+    color: var(--text-color-2);
+    font-weight: 500;
 }
 
 .navigationContainer {

@@ -1,0 +1,11 @@
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.breadcrumbLink,
+.breadcrumbSeparator,
+.breadcrumbCurrent {
+    color: var(--text-color-1);
+}

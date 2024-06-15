@@ -9,7 +9,7 @@ type Chapter = {
     subchapters: SubChapter[]
 }
 
-const chapterList: Chapter[] = [
+export const chapterList: Chapter[] = [
     {
         title: 'Cover Page',
         link: '/',
@@ -17,7 +17,7 @@ const chapterList: Chapter[] = [
     },
     {
         title: 'Team Introduction',
-        link: '/team-intro',
+        link: '/team-introduction',
         subchapters: []
     },
     {
@@ -134,6 +134,7 @@ type ChapterInfo = {
     link: string
     chapter: number
     subChapter: number | null
+    chapterTitle?: string
 }
 
 /**
@@ -161,7 +162,8 @@ export const getChapter = (chapter: number = 0, subChapter: number | null): Chap
             title: chapterList[chapter].subchapters[subChapter].title,
             link: chapterList[chapter].subchapters[subChapter].link,
             chapter: chapter,
-            subChapter: subChapter
+            subChapter: subChapter,
+            chapterTitle: chapterList[chapter].title
         }
     }
 }
@@ -241,4 +243,23 @@ export const getChapterIndex = (link: string): ChapterIndex => {
     }
     const subChapterIndex = chapterList[chapterIndex].subchapters.findIndex((subChapter) => subChapter.link === link)
     return { chapter: chapterIndex, subChapter: subChapterIndex }
+}
+
+type ChapterTitle = {
+    title: string
+    parentTitle?: string
+    parentLink?: string
+}
+
+export const linkToTitle = (link: string): ChapterTitle => {
+    const chapterIndex = getChapterIndex(link)
+    const chapter = getChapter(chapterIndex.chapter ?? 0, chapterIndex.subChapter)
+    if (!chapter) {
+        return { title: '404 Not Found' }
+    }
+    if (chapter.subChapter === null) {
+        return { title: chapter.title }
+    } else {
+        return { title: chapter.title, parentTitle: chapter.chapterTitle ?? '', parentLink: getChapter(chapter.chapter ?? 0, null)?.link }
+    }
 }
