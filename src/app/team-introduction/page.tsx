@@ -35,7 +35,14 @@ export default function TeamIntro() {
                 {teamMembers.map((member, index) => (
                     <div key={index} className={styles.memberCard}>
                         <div className={styles.profilePictureContainer}>
-                            <Image className={styles.profilePicture} src={member.profilePicturePath} alt={member.name} width={180} height={240} />
+                            <Image
+                                className={styles.profilePicture}
+                                src={member.profilePicturePath}
+                                alt={member.name}
+                                width={180}
+                                height={240}
+                                unoptimized={true}
+                            />
                         </div>
                         <p className={styles.memberName}>{member.name}</p>
                     </div>
